@@ -1,0 +1,13 @@
+<template>
+    <div>
+       details-电影详情
+    </div>
+</template>
+<script>
+export default {
+    
+}
+</script>
+<style scoped>
+    
+</style>
