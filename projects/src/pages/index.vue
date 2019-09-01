@@ -1,17 +1,35 @@
 <template>
     <div>
       <router-link-nav></router-link-nav>
-       <router-link-center></router-link-center>
+      <router-link-center></router-link-center>
+     <div>
+          <newlist>
+              <cona slot="slota"></cona>
+              <conb slot="slotb"></conb>
+          </newlist>
+          
+     </div>
+    
+
     </div>
 </template>
 <script>
-import routerLinkNav from '../components/routerLinkNav'
-import routerLinkCenter from '../components/routerLinkCenter'
+import routerLinkNav from '../components/nav/routerLinkNav'
+import routerLinkCenter from '../components/nav/routerLinkCenter'
+import newlist from '../components/newList/newlist'
+import cona from '../components/newList/cona'
+import conb from '../components/newList/conb'
+
+
 export default {
     components:{
         routerLinkNav,
-        routerLinkCenter
+        routerLinkCenter ,
+        newlist,
+        cona,
+        conb
     }
+    
 }
 </script>
 <style scoped>

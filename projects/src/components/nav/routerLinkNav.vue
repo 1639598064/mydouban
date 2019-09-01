@@ -5,7 +5,7 @@
       <router-link to="/book">图书</router-link>
        <router-link to="/broadcast">广播</router-link>
        <router-link to="/group">小组</router-link>
-      <router-link to="/change"><img src="../../static/img/search.png"></router-link>
+      <router-link to="/change"><img src="../../../static/img/search.png"></router-link>
     
       
    </div>

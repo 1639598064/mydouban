@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <div class="boxTop">
-            <span>取消</span>
+            <span @click="goBack()">取消</span>
             <h4>登录豆瓣</h4>
         </div>
         <div class="boxCenter">
@@ -47,7 +47,8 @@ export default {
                     method:"post",
                     data:params
                 }).then((data)=>{
-                    alert("登录成功")
+                    alert("登录成功");
+                    this.$router.push("/index")
                     localStorage.setItem("token",data.data.token);
                     console.log(data)
                 })
@@ -55,6 +56,9 @@ export default {
                 console.log("用户输入为空");
                 return 
             }
+        },
+        goBack(){
+            this.$router.go(-1);
         }
     }
 }

@@ -43,7 +43,8 @@ export default {
                     method:"post",
                     data:params
                 }).then((data)=>{
-                    alert("注册成功")
+                    alert("注册成功");
+                    this.$router.push("/login");
                     console.log(data.config.data)
                 })
                 // this.axios.post("http://localhost:3000/post",params).then((ok)=>{

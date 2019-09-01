@@ -19,7 +19,7 @@ export default {
 <style scoped>
     .com{
       width: 86%;
-      margin:7%  7%;
+      margin:7%  7% 0;
       font-size: 0;
     }
     .com>a{
