@@ -1,36 +1,69 @@
 <template>
     <div class="allBox">
-        <div class="box">
-            <div class="leftBox">
-                <h4>来加入小柒の圈子,体验有趣的北京玩乐故事</h4>
-                <slot name="slota"></slot>
+        <div class="fuBox" v-for="(v, i) in arr" :key="i">
+            <div class="box">
+                <div class="leftBox">
+                    <h4>{{arr[i].title}}</h4>
+                    <!-- <slot name="slota"></slot> -->
+                    <p>{{fenge[i]}}</p>
+                </div>
+                <!-- <img src="../../../static/img/page.jpg"> -->
+                <img :src="arr[i].image">
             </div>
-            <img src="../../../static/img/page.jpg">
+            <p class="bomNet" >
+                <span>{{arr[i].category_name}}</span>
+                <!-- <slot name="slotb"></slot> -->
+                <span>{{arr[i].tags}}</span>
+            </p>
         </div>
-        <p class="bomNet">
-            <span>公益</span>
-            <slot name="slotb"></slot>
-        </p>
+        
 </div>
 </template>
 <script>
-
 export default {
-
+    data(){
+        return{
+            arr:[]
+        }
+    },
+    // 字符串截取p中的内容
+    computed: {
+        fenge(){
+            let obj=[];
+            for(let i in this.arr){
+               let temp=this.arr[i].content.split("<");
+                temp=temp[0].substring(0,35);
+                obj.push(temp);
+            }
+            return obj
+        }
+    },
+    //发送请求，调取数据
+    created() {
+        this.axios({
+            url:"/shouye",
+            method:"get"   
+        }).then((ok)=>{
+            console.log(ok.data.shouye)
+            this.arr=ok.data.shouye;
+        })
+    }
 }
 </script>
 <style scoped>
-    .allBox{
+    .fuBox{
+        border-bottom:0.01rem solid #e3e3e3;
         width: 100%;
-        border-bottom:0.01rem solid #aaa; 
-        margin:.2rem .07rem 0;
+        margin:.2rem .07rem 0; 
     }
     .leftBox{
         width: 2rem;
+        margin-left:.17rem;
     }
     .leftBox>h4{
-         color:#494949;
+        color:#494949;
         font-weight: 100;
+        font-size: .14rem;
         line-height: .16rem;
         line-height: .2rem;
     }
@@ -45,10 +78,20 @@ export default {
          color:#ccc;
          font-size:.1rem;
          line-height: .5rem;
-         margin-left:.1rem;
+         margin-left:.17rem;
+     }
+      p{
+        font-size: .11rem;
+        color:#aaa;
+        line-height: .2rem;
+        margin-top:.1rem;
+    }
+     .bomNet span:last-child{
+         margin-right:.3rem;
      }
   img{
        width: .8rem;
        height:1rem ; 
+       margin:0 .3rem;
    }
 </style>

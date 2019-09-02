@@ -2,7 +2,7 @@
    <div class="box">
        <router-link to="/index">豆瓣</router-link>
        <router-link to="/movies">电影</router-link>
-      <router-link to="/book">图书</router-link>
+       <router-link to="/book">图书</router-link>
        <router-link to="/broadcast">广播</router-link>
        <router-link to="/group">小组</router-link>
       <router-link to="/change"><img src="../../../static/img/search.png"></router-link>
@@ -14,7 +14,7 @@
 <script>
 
 export default {
- 
+    
 }
 </script>
 
@@ -40,22 +40,22 @@ export default {
     .box>a:nth-of-type(3){
         font-size: .16rem;
         color:rgb(159, 120, 96);
-        margin-left:.08rem;
+        margin-left:.04rem;
     }
     .box>a:nth-of-type(4){
         font-size: .16rem;
         color:rgb(228, 168, 19);
-        margin-left:.08rem;
+        margin-left:.04rem;
     }
     .box>a:nth-of-type(5){
         font-size: .16rem;
         color: rgb(42, 184, 204);
-        vertical-align: middle;
-        margin-left:.08rem;
+        /* vertical-align: middle; */
+        margin-left:.04rem;
     }
     a>img{
        width:.25rem;
        vertical-align: middle;
-       margin-left:.08rem;
+       margin-left:.04rem;
     }
 </style>

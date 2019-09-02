@@ -13,6 +13,6 @@ export default {
         color:#ccc;
          font-size:.1rem;
          line-height: .5rem;
-         margin-right:.1rem;
+         margin-right:.3rem;
    }
 </style>

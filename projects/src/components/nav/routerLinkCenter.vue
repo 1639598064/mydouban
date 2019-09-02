@@ -18,8 +18,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .com{
-      width: 86%;
-      margin:7%  7% 0;
+      width: 88%;
+      margin:6%  6% 0;
       font-size: 0;
     }
     .com>a{

@@ -3,14 +3,11 @@
       <router-link-nav></router-link-nav>
       <router-link-center></router-link-center>
      <div>
-          <newlist>
+          <newlist  >
               <cona slot="slota"></cona>
               <conb slot="slotb"></conb>
-          </newlist>
-          
+          </newlist>     
      </div>
-    
-
     </div>
 </template>
 <script>
@@ -28,7 +25,13 @@ export default {
         newlist,
         cona,
         conb
-    }
+    },
+    data(){
+       
+    },
+    created() {
+        
+    },
     
 }
 </script>
