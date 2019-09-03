@@ -2,17 +2,42 @@
     <div class="allBox">
        <div class="centerBox">
             <div class="centera">
-                <img src="../../../static/img/page.jpg">
+                <img :src="imga">
                 <br>
-                <span>无闻东西</span>
-                <p>oooo</p>
+                <span>{{xiangqing}}</span>
+
+               <p>
+                   <five-star :fivexx="fivestar"></five-star>
+                   <span>{{obj.rating.average}}</span>
+               </p>
              </div>
        </div>
     </div>
 </template>
 <script>
+import fiveStar from './fiveStar'
 export default {
-    props:["imga","xiangqing"]
+    props:{
+        imga:{
+            type:String,
+            required:true
+        },
+        xiangqing:{
+            type:String,
+            required:true
+        },
+        fivestar:{
+            type:Number,
+            required:true
+        },
+        obj:{
+            type:Object,
+            required:true
+        }
+    },
+    components:{
+        fiveStar
+    }
 }
 </script>
 <style scoped>
@@ -22,18 +47,32 @@ export default {
    .centerBox{
        display: flex;
        overflow: auto;
-       margin:0 .2rem;
-
    }
    .centera{
-       padding:0 .01rem;
+       margin-right:.09rem;
+       text-align: center;
+   }
+   .centera>p{
+       display: flex;
+   }
+   .centera>span{
+       display: inline-block;
+       width: .9rem;
+       white-space: nowrap;
+       overflow:hidden;
+       text-overflow: ellipsis;
+   }
+   .centera>p>span{
+       font-size: .14em;
+       margin-top:.05rem;
+       margin-left:.1rem;
    }
    .centera>img{
        width: .9rem;
-       height: 1.3rem;
+       height: 1.2rem;
    }
    .centera>span{
-       font-size: .14rem;
+       font-size: .12rem;
        text-align: center;
    }
 </style>

@@ -1,11 +1,15 @@
 <template>
     <div>
-      <router-link-nav></router-link-nav>
-      <router-link-center></router-link-center>
-     <div>
-          <newlist  >
-              <cona slot="slota"></cona>
-              <conb slot="slotb"></conb>
+        <div class="oneBox">
+            <router-link-nav></router-link-nav>
+        </div>
+    
+    <div class="twoBox">
+        <router-link-center></router-link-center>
+          <newlist>
+              <!-- <cona slot="slota"></cona>
+              <conb slot="slotb"></conb> -->
+              
           </newlist>     
      </div>
     </div>
@@ -36,5 +40,10 @@ export default {
 }
 </script>
 <style scoped>
-    
+    .oneBox{
+        height: .5rem;
+    }
+    .twoBox{
+        overflow-y: auto;
+    }
 </style>

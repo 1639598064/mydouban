@@ -25,6 +25,8 @@ export default {
         height: .48rem;
         border-bottom: .01rem solid #f3f3f3;
         line-height: .48rem;
+        background: #fff;
+        position: fixed;
     }
     .box>a:nth-of-type(1){
         font-size: .24rem;

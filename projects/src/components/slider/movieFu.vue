@@ -1,12 +1,12 @@
 <template>
     <div class="allBox">
         <p>
-            <b>影院热映</b>
+            <b>{{movieTitle}}</b>
             <a href="">更多</a>
         </p>
-         <!-- <s-zi v-for="(v,i) in propsFu" :key="i" :imga="v.medium" :xiangqing="v."></s-zi> -->
-          <s-zi v-for="(v,i) in propsFu" :key="i" :xiangqing="v.title"></s-zi>
-        <s-zi></s-zi>
+        <div class="centerBox">
+             <s-zi v-for="(v,i) in propsFu" :key="i" :xiangqing="v.title" :imga="v.images.medium" :fivestar="v.rating.average" :obj="v"></s-zi>
+        </div>
     </div>
 </template>
 <script>
@@ -15,21 +15,24 @@ export default {
     components:{
         sZi
     },
-    props:{
-        propsFu:{
-            type:String,
-            required:true
-        }
-    }
+    props:[ 
+        "movieTitle","propsFu"
+    ]  
 }
 </script>
 <style scoped>
    .allBox{
        width: 100%;
    } 
+   .centerBox{
+        display: flex;
+        overflow: auto;
+        margin:.1rem .2rem  0 .2rem;
+   }
    .allBox>p{
        display: flex;
        justify-content: space-between;
+       margin:.1rem 0;
    }
    .allBox>p>b{
        font-size: .14rem;
