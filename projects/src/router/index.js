@@ -10,6 +10,7 @@ import change from '../pages/change'
 import group from '../pages/group'
 import movies from '../pages/movies'
 import index from '../pages/index'
+import indexXiangq from '../pages/indexXiangq'
 
 
 
@@ -61,6 +62,15 @@ export default new Router({
       path: '/index',
       name: 'index',
       component: index
+    },
+    {
+      path: '/indexXiangq',
+      name: 'indexXiangq',
+      component: indexXiangq
+    },
+    {
+      path:"/",
+      redirect:"index"
     }
 
   ]

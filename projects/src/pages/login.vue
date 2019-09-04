@@ -82,8 +82,8 @@ export default {
       position: absolute;
       left:.16rem;
       top:.11rem;
-       color:#42bd56;
-       font-size: .14rem;
+      color:#42bd56;
+      font-size: .14rem;
    }
    .boxCenter{
        width: 2.9rem;

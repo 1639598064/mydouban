@@ -2,7 +2,7 @@
     <div class="allBox">
         <p>
             <b>{{bookTitle}}</b>
-            <a href="">更多</a>
+            <a href="#">更多</a>
         </p>
         <div class="centerBox">
              <s-zi v-for="(v,i) in propsFu" :key="i" :xiangqing="v.title" :imga="v.images.medium" :fivestar="v.rating.average" :obj="v"></s-zi>
@@ -37,6 +37,7 @@ export default {
    .allBox>p>b{
        font-size: .14rem;
        margin-left:.2rem;
+       font-weight: 200;
    }
    .allBox>p>a{
        font-size: .14rem;

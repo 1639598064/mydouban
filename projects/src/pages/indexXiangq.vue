@@ -1,33 +1,26 @@
 <template>
     <div>
-      <div class="oneBox">
+       <div class="oneBox">
            <router-link-nav></router-link-nav>
-      </div>
+       </div>
        <div class="twoBox">
             <open-app></open-app>
-            <top-login></top-login>
-
-            <guangbo v-for="i in 9" :key="i"></guangbo>
-            <a href="#">显示更多广播</a>
+            <index-connect></index-connect>
             <pablic-footer></pablic-footer>
        </div>
-
     </div>
 </template>
 <script>
 import routerLinkNav from '../components/nav/routerLinkNav'
-import guangbo from '../components/guangboAll/guangbo'
 import openApp from '../components/guangboAll/openApp'
-import topLogin from '../components/guangboAll/topLogin'
 import  pablicFooter from '../components/pablicFooter'
-
+import indexConnect from '../components/indexConnect'
 export default {
     components:{
         routerLinkNav,
-        guangbo,
         openApp,
-        topLogin,
-        pablicFooter
+        pablicFooter,
+        indexConnect
     }
 }
 </script>
@@ -37,12 +30,5 @@ export default {
     }
     .twoBox{
         overflow-y: auto;
-    }
-    .twoBox>a{
-        display: inline-block;
-        font-size:.14rem;
-        color:#2ca532;
-        margin-left:1.1rem;
-        line-height: .8rem;
     }
 </style>

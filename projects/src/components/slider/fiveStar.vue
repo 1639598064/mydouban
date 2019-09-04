@@ -14,7 +14,7 @@ export default {
                 arr[i]=2
             }
             // console.log( parseInt(this.fivexx)%2)
-            parseFloat(this.fivexx)%2==0?(arr[a]=2):(arr[a]=1);
+            parseFloat(this.fivexx)%2==0?(arr[a]=0):(arr[a]=1);
             return arr;
         }
     }

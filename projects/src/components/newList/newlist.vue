@@ -1,6 +1,6 @@
 <template>
     <div class="allBox">
-        <div class="fuBox" v-for="(v, i) in arr" :key="i">
+        <div class="fuBox" v-for="(v, i) in arr" :key="i" @click="Xiangq(i)">
             <div class="box">
                 <div class="leftBox">
                     <h4>{{arr[i].title}}</h4>
@@ -16,7 +16,6 @@
                 <span>{{arr[i].tags}}</span>
             </p>
         </div>
-        
 </div>
 </template>
 <script>
@@ -47,6 +46,15 @@ export default {
             console.log(ok.data.shouye)
             this.arr=ok.data.shouye;
         })
+    },
+    methods:{
+        Xiangq(){
+            this.$router.push({
+            path: "/indexXiangq",
+            query: {i:"123"}
+        })  
+    
+        }
     }
 }
 </script>
@@ -74,13 +82,13 @@ export default {
         display: flex;
         justify-content:space-between;
     }
-     .bomNet>span{
-         color:#ccc;
-         font-size:.1rem;
-         line-height: .5rem;
-         margin-left:.17rem;
-     }
-      p{
+    .bomNet>span{
+        color:#ccc;
+        font-size:.1rem;
+        line-height: .5rem;
+        margin-left:.17rem;
+    }
+    p{
         font-size: .11rem;
         color:#aaa;
         line-height: .2rem;

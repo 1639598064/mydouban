@@ -16,8 +16,7 @@
                 <classify-look></classify-look>
             </div>
             <pablic-footer></pablic-footer>
-       </div>
-       
+       </div>   
     </div>
 </template>
 <script>

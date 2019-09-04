@@ -1,11 +1,14 @@
 <template>
-    <div>
-        <ul v-for="(v,i) in obj" :key="i">
-            <li>
-                <a href="">{{obj[i].name}}</a> 
-                <span></span>
-            </li>
-        </ul>
+    <div> 
+        <div class="box">
+            <p>分类浏览</p>
+            <ul v-for="(v,i) in obj" :key="i">
+                <li>
+                    <a href="">{{obj[i].name}}</a> 
+                    <span></span>
+                </li>
+             </ul>  
+        </div>
     </div>
 </template>
 <script>
@@ -27,13 +30,16 @@ export default {
 }
 </script>
 <style scoped>
-    div{
+   .box{
         margin-left:1.2em;
     }
-    ul{
+    .box>ul{
         display: inline-block;
     }
-    ul>li{
+    .box>p{
+        line-height: .7rem;
+    }
+   .box>ul>li{
         width: 1.45rem;
         height: .4rem;
         border-right:.009rem solid #ccc;
@@ -43,12 +49,12 @@ export default {
         display: flex;
         justify-content: space-around;
     }
-    ul>li>a{
+    .box>ul>li>a{
         font-size: .14rem;
         color:#42bd56;
         margin-left:-.2rem;
     }
-    ul>li>span{
+    .box>ul>li>span{
         font-weight: 700;
         display: inline-block;
         border-right: 0.01rem solid #ccc;
