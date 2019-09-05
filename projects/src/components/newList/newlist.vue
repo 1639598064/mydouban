@@ -1,13 +1,13 @@
 <template>
     <div class="allBox">
-        <div class="fuBox" v-for="(v, i) in arr" :key="i" @click="Xiangq(i)">
+        <img src="../../../static/img/loading_green.c0f9be0.gif" v-if="arr.length<=0">
+        <div class="fuBox"  v-for="(v, i) in arr" :key="i" @click="Xiangq(v.id)" v-else>
             <div class="box">
                 <div class="leftBox">
                     <h4>{{arr[i].title}}</h4>
                     <!-- <slot name="slota"></slot> -->
                     <p>{{fenge[i]}}</p>
                 </div>
-                <!-- <img src="../../../static/img/page.jpg"> -->
                 <img :src="arr[i].image">
             </div>
             <p class="bomNet" >
@@ -39,19 +39,21 @@ export default {
     },
     //发送请求，调取数据
     created() {
-        this.axios({
-            url:"/shouye",
-            method:"get"   
-        }).then((ok)=>{
-            console.log(ok.data.shouye)
-            this.arr=ok.data.shouye;
-        })
+        setTimeout(()=>{
+            this.axios({
+                url:"/shouye",
+                method:"get"   
+            }).then((ok)=>{
+                console.log(ok.data.shouye)
+                this.arr=ok.data.shouye;
+            })
+        },1500)    
     },
     methods:{
-        Xiangq(){
+        Xiangq(id){
             this.$router.push({
             path: "/indexXiangq",
-            query: {i:"123"}
+            query: {"id":id,"arr":this.arr}
         })  
     
         }
@@ -59,6 +61,12 @@ export default {
 }
 </script>
 <style scoped>
+    .allBox>img{
+        width: .7rem;
+        height:.7rem;
+        margin-left:1.3rem;
+        margin-top:.3rem;
+    }
     .fuBox{
         border-bottom:0.01rem solid #e3e3e3;
         width: 100%;

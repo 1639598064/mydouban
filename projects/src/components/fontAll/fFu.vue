@@ -5,7 +5,8 @@
             <a href="">更多</a>
         </p>
         <div class="centerBox">
-             <f-zi v-for="(v,i) in fontFu" :key="i" :txt="v.title" :style="{color:v.color}"></f-zi>
+             <f-zi v-for="(v,i) in fontFu" :key="i" :txt="v.title" :style="{color:v.color}" v-if="!v.line"></f-zi>
+             <br v-else>
         </div>
     </div>
 </template>
@@ -25,9 +26,11 @@ export default {
        width: 100%;
    } 
    .centerBox{
-       display: flex;
-       overflow:auto;
-        margin:.1rem .2rem  0 .2rem;
+       /* display: flex;*/
+       overflow:auto; 
+       margin-left:.2rem;
+       /* flex-wrap: nowrap; */
+       white-space: nowrap;
    }
    .allBox>p{
        display: flex;

@@ -3,7 +3,7 @@ import Router from 'vue-router'
 // import model from '@/components/model'
 import register from '../pages/register'
 import login from '../pages/login'
-import details from '../pages/details'
+import moviedetails from '../pages/moviedetails'
 import book from '../pages/book'
 import broadcast from '../pages/broadcast'
 import change from '../pages/change'
@@ -29,9 +29,9 @@ export default new Router({
       component: login
     },
     {
-      path: '/details',
-      name: 'details',
-      component: details
+      path: '/moviedetails',
+      name: 'moviedetails',
+      component: moviedetails
     },
     {
       path: '/book',

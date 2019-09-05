@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="box">
+        <div class="box" @click="goLogin()">
             <a href="#">
                 <img src="../../../static/img/login.jpg">
                 <b>请先登录</b>
@@ -14,7 +14,11 @@
 </template>
 <script>
 export default {
-    
+    methods: {
+        goLogin(){
+            this.$router.push("/login");
+        }
+    },
 }
 </script>
 <style scoped>

@@ -20,6 +20,6 @@ export default {
         border:.01rem solid goldenrod;
         padding:.15rem .1rem;
         border-radius: .05rem;
-        margin:.1rem .1rem .1rem 0;
+        margin:.1rem .1rem 0 0;
     }
 </style>
