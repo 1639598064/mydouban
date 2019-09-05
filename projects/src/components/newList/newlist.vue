@@ -52,10 +52,9 @@ export default {
     methods:{
         Xiangq(id){
             this.$router.push({
-            path: "/indexXiangq",
-            query: {"id":id,"arr":this.arr}
-        })  
-    
+                path: "/indexXiangq",
+                query: {"id":id,"arr":this.arr}
+             })  
         }
     }
 }

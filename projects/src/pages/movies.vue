@@ -59,6 +59,7 @@ export default {
            
        })
     },
+    //计算属性处理数据
     computed:{
         moviea(){
              var demoa=this.obj.filter((v,i)=>{

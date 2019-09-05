@@ -5,7 +5,7 @@
             <a href="">更多</a>
         </p>
         <div class="centerBox">
-             <s-zi v-for="(v,i) in propsFu" :key="i" :xiangqing="v.title" :imga="v.images.medium" :fivestar="v.rating.average" :obj="v"></s-zi>
+             <s-zi v-for="(v,i) in propsFu" :key="i" :xiangqing="v.title" :imga="v.images.medium" :fivestar="v.rating.average" :id="v.id" :obj="v"></s-zi>
         </div>
     </div>
 </template>
@@ -17,7 +17,7 @@ export default {
     },
     props:[ 
         "movieTitle","propsFu"
-    ]  
+    ] 
 }
 </script>
 <style scoped>

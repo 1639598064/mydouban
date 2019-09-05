@@ -1,11 +1,10 @@
 <template>
     <div class="allBox">
-       <div class="centerBox">
+       <div class="centerBox" @click="goMovie()">
             <div class="centera">
                 <img :src="imga">
                 <br>
                 <span>{{xiangqing}}</span>
-
                <p>
                    <five-star :fivexx="fivestar"></five-star>
                    <span>{{obj.rating.average}}</span>
@@ -33,10 +32,22 @@ export default {
         obj:{
             type:Object,
             required:true
+        },
+        id:{
+            type:Number,
+            required:true
         }
     },
-    components:{
+    components:{ 
         fiveStar
+    },
+     methods:{
+        goMovie(){
+             this.$router.push({
+                path: "/moviedetails",
+                query: {"id":this.id,"arr":this.obj}
+             })  
+        }
     }
 }
 </script>
