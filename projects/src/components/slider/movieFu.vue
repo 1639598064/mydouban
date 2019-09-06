@@ -5,7 +5,9 @@
             <a href="">更多</a>
         </p>
         <div class="centerBox">
-             <s-zi v-for="(v,i) in propsFu" :key="i" :xiangqing="v.title" :imga="v.images.medium" :fivestar="v.rating.average" :id="v.id" :obj="v"></s-zi>
+            <div  v-for="(v,i) in propsFu" :key="i" @click="goMovie(i)">
+                <s-zi :xiangqing="v.title" :imga="v.images.medium" :fivestar="v.rating.average"  :obj="v"></s-zi>
+            </div>  
         </div>
     </div>
 </template>
@@ -17,7 +19,25 @@ export default {
     },
     props:[ 
         "movieTitle","propsFu"
-    ] 
+    ] ,
+    data(){
+        return{
+            movieXq:[]
+        }
+    },
+   methods: {
+       goMovie(val){
+           this.movieXq= this.propsFu.filter((v,i)=>{
+                if(i==val){
+                    return this.propsFu[i]
+                }
+            })
+             this.$router.push({
+                path: "/moviedetails",
+                query: {arr:this.movieXq}
+             })  
+        }
+   }
 }
 </script>
 <style scoped>

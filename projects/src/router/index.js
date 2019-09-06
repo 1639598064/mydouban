@@ -11,7 +11,7 @@ import group from '../pages/group'
 import movies from '../pages/movies'
 import index from '../pages/index'
 import indexXiangq from '../pages/indexXiangq'
-
+import bookdetails from '../pages/bookdetails.vue'
 
 
 Vue.use(Router)
@@ -67,6 +67,11 @@ export default new Router({
       path: '/indexXiangq',
       name: 'indexXiangq',
       component: indexXiangq
+    },
+    {
+      path: '/bookdetails',
+      name: 'bookdetails',
+      component: bookdetails
     },
     {
       path:"/",

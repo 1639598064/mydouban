@@ -7,17 +7,17 @@
             <open-app></open-app>
             <div class="boxa">
                 <div class="boxLeft">
-                    <h3>{{movieF[0].title}}</h3>
-                    <five-star :fivexx="movieF[0].rating.average"></five-star>{{movieF[0].rating.average}}<span>20000人评价</span>
+                    <h3>{{bookF[0].title}}</h3>
+                    <five-star :fivexx="bookF[0].rating.average"></five-star>{{bookF[0].rating.average}}<span>20000人评价</span>
                     <p>2018/剧情 /爱情 /战争 /王力宏 /章子怡 /李芳芳 /中国大陆</p>
                 </div>
-                <img :src="movieF[0].images.medium">
+                <img :src="bookF[0].images.medium">
                 <span>用APP查看影人资料</span>
                 <div class="centerBox">
                     <span>想看</span>
                     <span>看过</span>
                 </div>
-                <b>{{movieF[0].title}}的简介</b>
+                <b>{{bookF[0].title}}的简介</b>
                 <div class="conBox">
                     斯诺登2004年应征入伍、后被派遣到伊拉克战场，因不幸在训练时双腿受伤，斯诺登退役回国后应聘加入中情局。之后，他又进入国安局工作，并意外发现政府在“9·11”事件后对公民电话和社交网络实施大规模监控计划，于是泄露了大量机密文件。事发后，斯诺登遭当局通缉，便逃到香港。此后，他几经辗转逃至俄罗斯寻求庇护。
                 </div>
@@ -27,17 +27,17 @@
                     <span>爱情</span>
                     <span>战争</span>
                 </p>
-                <b>{{movieF[0].title}}的图片</b>
+                <b>{{bookF[0].title}}的图片</b>
                 <div class="boxSlider">
-                    <img :src="movieF[0].images.medium"  v-for="i in 4" :key="i">
+                    <img :src="bookF[0].images.medium"  v-for="i in 4" :key="i">
                 </div>
-                <b>{{movieF[0].title}}的短评</b>
+                <b>{{bookF[0].title}}的短评</b>
             </div>
             <div v-for="i in 3" :key="i">
                 <guangbo></guangbo>
             </div>
             <div>
-                <fFu fontTitle="推荐的豆列" :fontFu="aa"></fFu>
+                <fFu fontTitle="推荐的书系" :fontFu="bb"></fFu>
             </div>
             <pablic-footer></pablic-footer>
         </div>  
@@ -62,22 +62,22 @@ export default {
     },
     data(){
         return{
-            movieF:[]
+            bookF:[]
         }
     },
-     props:["arr","aa"],
+     props:["arr","bb"],
     created() {
         if(this.$route.query.arr.length==15){
-            this.$router.push("/movies")
+            this.$router.push("/book")
         }else{
-            this.movieF=this.$route.query.arr;
+            this.bookF=this.$route.query.arr;
             // console.log(this.$route.query.arr.length)
             this.axios({
-                url:"/faxianhaodianying",
+                url:"/goodBook",
                 method:"get"
             }).then((ok)=>{
-                // console.log(ok.data.faxianhaodianying)
-                this.aa=ok.data.faxianhaodianying
+                // console.log(ok.data.goodBook)
+                this.bb=ok.data.goodBook
             })
         }  
     }
