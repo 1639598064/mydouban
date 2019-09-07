@@ -5,7 +5,7 @@
             <a href="#">更多</a>
         </p>
         <div class="centerBox">
-            <div v-for="(v,i) in propsFu" :key="i" @click="goBook">
+            <div v-for="(v,i) in propsFu" :key="i">
                  <s-zi  :xiangqing="v.title" :imga="v.images.medium" :fivestar="v.rating.average" :obj="v"></s-zi>
             </div>
         </div>

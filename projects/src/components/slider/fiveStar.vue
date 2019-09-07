@@ -1,6 +1,8 @@
 <template>
     <div>
-        <img v-for="(v,i) in num" :key="i" :src="'../../../static/img/'+v+'.png'"/>
+        <!-- <img v-for="(v,i) in num" :key="i" :src="'../../../static/img/'+v+'.png'"/> -->
+        <img v-for="(v,i) in num" :key="i" :src="'static/img/'+v+'.png'"/>
+
     </div>
 </template>
 <script>

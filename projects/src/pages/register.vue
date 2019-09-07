@@ -31,29 +31,30 @@ export default {
     },
     methods:{
         rerBtn(){
-            if(!this.inputemail==""&&!this.inputpasw==""&&!this.inputuname==""){
-                let params =new URLSearchParams();
-                params.append("uemail",this.inputemail);
-                params.append("pasw",this.inputpasw);
-                params.append("uname",this.inputuname);
-                this.axios({
-                    // url:"http://localhost:3000/post",
-                    url:"http://localhost:3000/reg",
+            // if(!this.inputemail==""&&!this.inputpasw==""&&!this.inputuname==""){
+            //     let params =new URLSearchParams();
+            //     params.append("uemail",this.inputemail);
+            //     params.append("pasw",this.inputpasw);
+            //     params.append("uname",this.inputuname);
+            //     this.axios({
+            //         // url:"http://localhost:3000/post",
+            //         url:"http://localhost:3000/reg",
 
-                    method:"post",
-                    data:params
-                }).then((data)=>{
-                    alert("注册成功");
-                    this.$router.push("/login");
-                    console.log(data.config.data)
-                })
-                // this.axios.post("http://localhost:3000/post",params).then((ok)=>{
-                //     alert("注册成功")
-                // })
-            }else{
-                console.log("客户输入为空");
-                return 
-            }
+            //         method:"post",
+            //         data:params
+            //     }).then((data)=>{
+            //         alert("注册成功");
+            //         this.$router.push("/login");
+            //         console.log(data.config.data)
+            //     })
+            //     // this.axios.post("http://localhost:3000/post",params).then((ok)=>{
+            //     //     alert("注册成功")
+            //     // })
+            // }else{
+            //     console.log("客户输入为空");
+            //     return 
+            // }
+            this.$router.push("/login");
            
         },
         funa(){

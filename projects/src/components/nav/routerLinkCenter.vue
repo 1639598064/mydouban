@@ -1,7 +1,7 @@
 <template>
    <div class="com">
-        <router-link to="/details">影院热映</router-link>
-        <router-link to="/">欧美新碟榜</router-link>
+        <router-link to="/movies">影院热映</router-link>
+        <router-link to="/broadcast">欧美新碟榜</router-link>
          <router-link to="/register">注册账号</router-link>
         <router-link to="/login">登录豆瓣</router-link>
    </div>

@@ -37,7 +37,7 @@
                 <guangbo></guangbo>
             </div>
             <div>
-                <fFu fontTitle="推荐的书系" :fontFu="bb"></fFu>
+                <fFu fontTitle="推荐的书系" :fontFu="aa"></fFu>
             </div>
             <pablic-footer></pablic-footer>
         </div>  
@@ -65,7 +65,7 @@ export default {
             bookF:[]
         }
     },
-     props:["arr","bb"],
+     props:["arr","aa"],
     created() {
         if(this.$route.query.arr.length==15){
             this.$router.push("/book")

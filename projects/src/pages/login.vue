@@ -38,24 +38,25 @@ export default {
             this.bool=!this.bool;
         },
         loginBtn(){
-            if(!this.logemail==""&&!this.logpswd==""){
-                let params =new URLSearchParams();
-                params.append("logemail",this.logemail);
-                params.append("logpswd",this.logpswd);
-                this.axios({
-                    url:"http://localhost:3000/login", 
-                    method:"post",
-                    data:params
-                }).then((data)=>{
-                    alert("登录成功");
-                    this.$router.push("/index")
-                    localStorage.setItem("token",data.data.token);
-                    console.log(data)
-                })
-            }else{
-                console.log("用户输入为空");
-                return 
-            }
+            // if(!this.logemail==""&&!this.logpswd==""){
+            //     let params =new URLSearchParams();
+            //     params.append("logemail",this.logemail);
+            //     params.append("logpswd",this.logpswd);
+            //     this.axios({
+            //         url:"http://localhost:3000/login", 
+            //         method:"post",
+            //         data:params
+            //     }).then((data)=>{
+            //         alert("登录成功");
+            //         this.$router.push("/index")
+            //         localStorage.setItem("token",data.data.token);
+            //         console.log(data)
+            //     })
+            // }else{
+            //     console.log("用户输入为空");
+            //     return 
+            // }
+             this.$router.push("/index")
         },
         goBack(){
             this.$router.go(-1);
